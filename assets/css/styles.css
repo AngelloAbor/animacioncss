@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+  /* Menú lateral */
+.sidebar {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    grid-area: header;
+}
+.sidebar ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto;
+}
+
+  /* Logo animado */
+.logo {
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+  /* Galería de imágenes */
+main{
+    grid-area: main;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 10px;
+}
+.card{
+    background-color: whitesmoke;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.thumbnail{
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    object-fit: cover;
+}
+.thumbnail:hover{
+    transform: scale(1.2);
+}
+button{
+    background-color: blue;
+    color: white;
+    height: auto;
+    width: auto;
+}
+
+
+
+  /* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    grid-area: footer;
+}
+
+  /* Media queries */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+@media (max-width: 576px) {
+.grid_container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+@media (min-width: 768px) and (max-width:1199px){
+    .grid_container {
+      grid-template-columns: 1fr 10fr;
+      grid-template-rows: 1fr;
+      grid-template-areas:
+        "header header"
+        "main main"
+        "footer footer";
+    }
+    .search {
+      width: 20vw;
+      height: 100%;
+    }
+  
+.grid_container_main{
+    display: grid;
+    grid-template-columns: repeat(2, 20rem);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list_form{
+    display: none;
+}
+.grid_container_main{
+    overflow-y: scroll;
+}  
+}
